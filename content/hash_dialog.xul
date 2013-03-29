@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://hashpass/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://hashpass/locale/browserOverlay.dtd">
+
+<dialog
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="hashpassDialog"
+  title="HashPass Password Hasher"
+  ondialogaccept="return onOK();"
+  onload="onLoad();"
+  persist="screenX screenY width height"
+  windowtype="myDialogWindowType">
+
+  <script type="application/javascript"
+    src="chrome://hashpass/content/SHA-512.js" />
+  <script type="application/javascript"
+    src="chrome://hashpass/content/hash_dialog.js" />
+
+  <grid>
+    <columns><column/><column/></columns>
+    <rows>
+      <row align="center">
+        <label value="Domain:"/>
+        <textbox id="domain" onchange="run_hash()" onkeyup="run_hash()" />
+      </row>
+      <row align="center">
+        <label value="Password:"/>
+        <textbox id="pw" type="password" onchange="run_hash()" onkeyup="run_hash()" />
+      </row>
+    </rows>
+  </grid>
+  <vbox><textbox id="output" multiline="true" rows="4" /></vbox>
+</dialog>
+

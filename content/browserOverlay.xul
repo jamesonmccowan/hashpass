@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://hashpass/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://hashpass/locale/browserOverlay.dtd">
+
+<overlay id="hashpass-browser-overlay"  
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://hashpass/content/browserOverlay.js" />
+
+  <!-- Get our strings from the regional settings -->
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="hashpass-string-bundle"
+      src="chrome://hashpass/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+  <!-- add item to right-click pop-up menu -->
+  <popup id="contentAreaContextMenu" onpopupshown="HashPass.show_menu_option(document.popupNode)">
+    <menuitem id="hashpass_insert" 
+      label="&hashpass.password.action;"
+      accesskey="&hashpass.password.accesskey;"
+      oncommand="HashPass.pass(document.popupNode);"/>
+  </popup>
+
+</overlay>
