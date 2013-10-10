@@ -12,3 +12,4 @@ would bother hashing thier password, see this other add-on's description:
 http://www.pcworld.com/product/947403/password-hash.html
 
 Hopefully I'll find some time to add a few more features I have in mind, and refine this readme.
+
